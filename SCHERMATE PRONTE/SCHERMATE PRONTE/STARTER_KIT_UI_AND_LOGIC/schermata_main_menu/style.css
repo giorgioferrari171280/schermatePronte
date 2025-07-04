@@ -1,0 +1,101 @@
+/* Stile Globale e Tema Dark Neon */
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --border-glow: 0 0 8px var(--primary-color), inset 0 0 6px rgba(0, 255, 204, 0.5);
+    --button-glow: 0 0 8px var(--secondary-color), inset 0 0 6px rgba(255, 0, 255, 0.5);
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Rajdhani', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    overflow: hidden; /* Impedisce lo scroll della pagina */
+}
+
+/* Contenitore padre dell'applicazione */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Allinea gli elementi all'inizio */
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    /* Effetto di sfondo animato: linee di scansione verticali */
+    background:
+        linear-gradient(rgba(13, 13, 13, 0.95), rgba(13, 13, 13, 0.95)),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, var(--primary-color) 2px, var(--primary-color) 3px);
+    background-size: 100%, 100% 5px;
+    animation: scanlines 15s linear infinite;
+}
+
+/* Animazione per le linee di scansione */
+@keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100vh; }
+}
+
+/* Header */
+.header {
+    width: calc(100% - 40px); /* Larghezza totale meno i margini laterali */
+    height: 10vh;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px; /* Spazio esterno di 20px su tutti i lati */
+}
+
+.header h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* Box centrale dei pulsanti */
+.menu-box {
+    width: 50%;
+    max-width: 600px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--button-glow);
+    padding: 5px;
+    margin: 10px; /* Padding esterno */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spazio tra i pulsanti */
+}
+
+/* Pulsanti del menu */
+.menu-button {
+    width: 100%;
+    padding: 15px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}

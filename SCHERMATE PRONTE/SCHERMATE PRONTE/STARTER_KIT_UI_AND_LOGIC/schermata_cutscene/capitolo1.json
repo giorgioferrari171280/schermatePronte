@@ -1,0 +1,19 @@
+[
+  {
+    "id": "c1_scena_iniziale",
+    "image": "assets/img/capitolo1/scena1.png",
+    "text": "Capitolo 1: La città non dorme mai. Ti addentri nel Distretto Neon, cercando l'entrata del club 'Il Glitch Cromatico' che hai visto nel chip.",
+    "next_screen": {
+      "id": "c1_scena_finale"
+    }
+  },
+  {
+    "id": "c1_scena_finale",
+    "image": "assets/img/capitolo1/scena2.png",
+    "text": "Sei dentro. Un fixer olografico ti passa un cripto-chip. 'La tua prossima mossa non sarà qui', sussurra. 'Segui il segnale'. Fine del Capitolo 1.",
+    "next_screen": {
+      "file": "cutscenes.json",
+      "id": "cutscene_interludio"
+    }
+  }
+]

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creazione Personaggio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header class="header">
+            <h1>CREA IL TUO PERSONAGGIO</h1>
+        </header>
+
+        <main class="creation-body">
+            <div class="column">
+                <div class="attributes-box">
+                    <div class="attribute-row">
+                        <label for="char-name">IL TUO NOME</label>
+                        <input type="text" id="char-name" class="name-input" placeholder="Digita qui...">
+                    </div>
+                    </div>
+
+                <div class="points-box">
+                    <span>PUNTI DISPONIBILI:</span>
+                    <span id="points-value"></span>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="attributes-box" id="right-attributes">
+                    </div>
+
+                <div class="actions-box">
+                    <button id="home-btn" class="action-btn">HOME PAGE</button>
+                    <button id="create-btn" class="action-btn">CREA</button>
+                    <button id="cancel-btn" class="action-btn">ANNULLA</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

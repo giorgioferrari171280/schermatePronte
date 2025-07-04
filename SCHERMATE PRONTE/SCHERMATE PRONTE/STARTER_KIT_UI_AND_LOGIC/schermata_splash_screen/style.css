@@ -1,0 +1,104 @@
+/* Stile Globale e Sfondo */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f5eabc; /* Un colore pergamena/sabbia chiaro */
+    font-family: 'Press Start 2P', cursive; /* Font in stile fumetto/pixel */
+}
+
+/* Contenitore Padre Globale */
+.container-padre {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Riquadro principale (Logo) */
+.riquadro-logo {
+    width: 60vw; /* 60% della larghezza dello schermo */
+    height: 50vh; /* 50% dell'altezza dello schermo */
+    max-width: 400px; /* Limite per schermi grandi */
+    max-height: 400px;
+    
+    background-color: #fffaf0; /* Bianco panna */
+    border: 5px solid #4b3b2b; /* Bordo marrone scuro "terroso" */
+    border-radius: 15px; /* Angoli arrotondati per un look più morbido */
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7); /* Ombra netta stile fumetto */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #4b3b2b;
+    font-size: 1.5em;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Barra di Caricamento */
+.loading-bar-container {
+    width: 60vw; /* Stessa larghezza del logo */
+    max-width: 400px;
+    height: 20px;
+    background-color: #d3c3a3; /* Sfondo della barra */
+    border: 4px solid #4b3b2b;
+    border-radius: 10px;
+    margin-top: 30px; /* Spazio dal logo */
+    overflow: hidden; /* Nasconde il riempimento che eccede */
+}
+
+.loading-bar-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #3498db; /* Blu vivace per il progresso */
+    border-radius: 5px;
+    animation: fill-bar 6s linear forwards; /* Animazione di 6 secondi */
+}
+
+/* Pulsante GIOCA! */
+.play-button {
+    width: 30vw; /* 30% della larghezza dello schermo */
+    max-width: 250px;
+    padding: 15px 20px;
+    margin-top: 50px; /* Spazio dalla barra */
+    
+    background-color: #90ee90; /* Verde chiaro, amichevole */
+    border: 5px solid #4b3b2b;
+    border-radius: 15px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.7);
+    
+    color: #4b3b2b;
+    font-size: 1.2em;
+    text-align: center;
+    cursor: pointer;
+    
+    visibility: hidden; /* Nascosto di default */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.play-button:hover {
+    transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+}
+
+.play-button:active {
+    transform: translateY(4px) translateX(4px); /* Effetto pressione */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.7);
+}
+
+/* Animazione per la barra di caricamento */
+@keyframes fill-bar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

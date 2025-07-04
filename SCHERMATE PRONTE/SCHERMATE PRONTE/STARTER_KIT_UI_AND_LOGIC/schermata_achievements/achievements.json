@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "nome": "CONTADINO MECCANIZZATO",
+    "immagine": "assets/img/achievements/trattore.jpg",
+    "descrizione": "Hai acquistato il nuovissimo modello FieldOMatic, il trattore più avveniristico sul mercato. Sei il primo agricoltore della valle a possedere questo gioiello.",
+    "sbloccato": true
+  },
+  {
+    "id": 2,
+    "nome": "POLLICE VERDE",
+    "immagine": "https://i.imgur.com/aKwV2n2.png",
+    "descrizione": "Hai raccolto 100 unità di pomodori super succosi nella stessa stagione. Le tue piante sono un modello di efficienza!",
+    "sbloccato": true
+  },
+  {
+    "id": 3,
+    "nome": "RE DEL MERCATO",
+    "immagine": "https://i.imgur.com/rL9E2GZ.png",
+    "descrizione": "Hai guadagnato 10.000 monete in un solo giorno vendendo i tuoi prodotti al mercato locale. Un vero genio degli affari!",
+    "sbloccato": true
+  },
+  {
+    "id": 4,
+    "nome": "MAESTRO DEL MAIS",
+    "immagine": "https://i.imgur.com/J1yF2aM.png",
+    "descrizione": "La tua dedizione al granturco ha dato i suoi frutti. Hai raccolto oltre 500 pannocchie dorate.",
+    "sbloccato": true
+  },
+  {
+    "id": 5,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 6,
+    "nome": "AMICO DEGLI ANIMALI",
+    "immagine": "https://i.imgur.com/dZc4zYp.png",
+    "descrizione": "Tutti gli animali della tua fattoria hanno raggiunto il massimo livello di felicità. Si vede che li tratti con amore!",
+    "sbloccato": true
+  },
+  {
+    "id": 7,
+    "nome": "MUGITORE MATTUTINO",
+    "immagine": "https://i.imgur.com/0fFv3vY.png",
+    "descrizione": "Hai munto le tue mucche per 30 giorni di fila all'alba. La costanza premia con il latte più fresco!",
+    "sbloccato": true
+  },
+  {
+    "id": 8,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 9,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 10,
+    "nome": "CASARO CERTIFICATO",
+    "immagine": "https://i.imgur.com/yGZfGH2.png",
+    "descrizione": "Hai trasformato il tuo latte in una forma di formaggio stagionato di alta qualità. Un sapore inconfondibile!",
+    "sbloccato": true
+  },
+  {
+    "id": 11,
+    "nome": "PIONIERE DELLA VALLE",
+    "immagine": "https://i.imgur.com/Uv2BqST.png",
+    "descrizione": "Hai sbloccato tutte le aree della mappa, espandendo i confini della tua fattoria fino all'ultimo centimetro di terra disponibile.",
+    "sbloccato": true
+  },
+  {
+    "id": 12,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 13,
+    "nome": "PRIMO RACCOLTO",
+    "immagine": "https://i.imgur.com/aKwV2n2.png",
+    "descrizione": "Hai venduto i tuoi primi prodotti. L'inizio di una grande avventura agricola!",
+    "sbloccato": true
+  },
+  {
+    "id": 14,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 15,
+    "nome": "RE DELLE GALLINE",
+    "immagine": "https://i.imgur.com/3Z4Z3iZ.png",
+    "descrizione": "Hai raccolto oltre 200 uova. Il tuo pollaio è un modello di produttività.",
+    "sbloccato": true
+  },
+  {
+    "id": 16,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 17,
+    "nome": "GRANAIO PIENO",
+    "immagine": "https://i.imgur.com/J1yF2aM.png",
+    "descrizione": "Hai immagazzinato 1000 unità di grano. Non avrai problemi per l'inverno!",
+    "sbloccato": true
+  },
+  {
+    "id": 18,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 19,
+    "nome": "DOMINATORE DI ZUCCHE",
+    "immagine": "https://i.imgur.com/8FkQ3Y4.png",
+    "descrizione": "Hai coltivato una zucca gigante da record per il festival d'autunno. Tutti ne parlano!",
+    "sbloccato": true
+  },
+  {
+    "id": 20,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 21,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 22,
+    "nome": "MANI D'ORO",
+    "immagine": "https://i.imgur.com/gT3v2bL.png",
+    "descrizione": "Hai raggiunto un patrimonio di 50.000 monete. La tua fattoria è un business fiorente.",
+    "sbloccato": true
+  },
+  {
+    "id": 23,
+    "nome": "APICOLTORE PROVETTO",
+    "immagine": "https://i.imgur.com/cI1a1zW.png",
+    "descrizione": "Hai prodotto il tuo primo barattolo di miele dorato. Dolce come il successo!",
+    "sbloccato": true
+  },
+  {
+    "id": 24,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 25,
+    "nome": "COLLEZIONE COMPLETA",
+    "immagine": "https://i.imgur.com/bQ4v4oF.png",
+    "descrizione": "Hai acquistato e potenziato al massimo ogni attrezzo agricolo disponibile.",
+    "sbloccato": true
+  },
+  {
+    "id": 26,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 27,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 28,
+    "nome": "PESCATORE LEGGENDARIO",
+    "immagine": "https://i.imgur.com/gD6j3qV.png",
+    "descrizione": "Hai catturato ogni specie di pesce presente nei fiumi e nei laghi della valle. Nessun pesce può sfuggirti!",
+    "sbloccato": true
+  },
+  {
+    "id": 29,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 30,
+    "nome": "BENEFACTOR DEL VILLAGGIO",
+    "immagine": "https://i.imgur.com/rL9E2GZ.png",
+    "descrizione": "Hai completato tutte le richieste del centro comunitario, riportando il villaggio al suo antico splendore.",
+    "sbloccato": true
+  },
+  {
+    "id": 31,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 32,
+    "nome": "ARCOBALENO DI ORTAGGI",
+    "immagine": "https://i.imgur.com/aKwV2n2.png",
+    "descrizione": "Hai coltivato e raccolto almeno 10 tipi diversi di ortaggi in una sola stagione.",
+    "sbloccato": true
+  },
+  {
+    "id": 33,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 34,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 35,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 36,
+    "nome": "STALLA DI LUSSO",
+    "immagine": "https://i.imgur.com/dZc4zYp.png",
+    "descrizione": "Hai potenziato al massimo il tuo fienile. I tuoi animali vivono in una vera e propria reggia!",
+    "sbloccato": true
+  },
+  {
+    "id": 37,
+    "nome": "DAL GRANO AL PANE",
+    "immagine": "https://i.imgur.com/J1yF2aM.png",
+    "descrizione": "Hai usato il tuo grano per macinare la farina e cuocere la tua prima pagnotta.",
+    "sbloccato": true
+  },
+  {
+    "id": 38,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 39,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 40,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 41,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 42,
+    "nome": "RE MILIONARIO",
+    "immagine": "https://i.imgur.com/gT3v2bL.png",
+    "descrizione": "Hai accumulato un milione di monete. Sei la persona più ricca della valle!",
+    "sbloccato": true
+  },
+  {
+    "id": 43,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 44,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 45,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 46,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 47,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 48,
+    "nome": "ESPLORATORE DEI BOSCHI",
+    "immagine": "https://i.imgur.com/Uv2BqST.png",
+    "descrizione": "Hai trovato il sentiero segreto che conduce alla radura nascosta nel cuore della foresta.",
+    "sbloccato": true
+  },
+  {
+    "id": 49,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 50,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 51,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 52,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 53,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 54,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 55,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 56,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 57,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 58,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 59,
+    "nome": "???",
+    "immagine": "",
+    "descrizione": "Questo achievement è ancora un mistero. Continua a giocare per scoprire come sbloccarlo.",
+    "sbloccato": false
+  },
+  {
+    "id": 60,
+    "nome": "LEGGENDA DELLA VALLE",
+    "immagine": "https://i.imgur.com/gT3v2bL.png",
+    "descrizione": "Hai completato ogni singolo achievement. La tua fattoria è un esempio per le generazioni a venire. Sei una vera leggenda!",
+    "sbloccato": false
+  }
+]

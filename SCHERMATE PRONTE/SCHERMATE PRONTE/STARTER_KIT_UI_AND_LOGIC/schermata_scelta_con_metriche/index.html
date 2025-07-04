@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulatore Agricolo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <header id="scenario-header">
+            <h1 id="scenario-title"></h1>
+        </header>
+
+        <main id="screen-body">
+
+            <section class="column" id="left-column">
+                <div class="box" id="image-box">
+                    <img id="scenario-image" src="" alt="Immagine dello scenario">
+                </div>
+                <div class="box" id="description-box">
+                    <p id="scenario-description"></p>
+                </div>
+            </section>
+
+            <section class="column" id="center-column">
+                <div class="box" id="impact-box">
+                    <p id="impact-description"></p>
+                </div>
+                <div id="choices-container">
+                    </div>
+            </section>
+
+            <section class="column" id="right-column">
+                <div id="metrics-container">
+                    </div>
+                <div id="footer-buttons">
+                    <button class="footer-btn">HOME</button>
+                    <button class="footer-btn">OPTIONS</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div id="modal-overlay" class="hidden"></div>
+    <div id="end-chapter-modal" class="hidden">
+        <h2>Fine del Capitolo</h2>
+        <p>Congratulazioni, hai completato gli scenari. Ecco il riepilogo finale delle tue metriche:</p>
+        <div id="modal-metrics-container">
+            </div>
+        <div class="modal-buttons">
+            <button id="replay-button" class="footer-btn">RIGIOCA</button>
+            <button id="continue-button" class="footer-btn">CONTINUA</button>
+        </div>
+    </div>
+
+</body>
+</html>

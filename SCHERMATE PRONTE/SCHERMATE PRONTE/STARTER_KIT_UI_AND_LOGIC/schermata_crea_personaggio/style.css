@@ -1,0 +1,182 @@
+/* Stile Globale e Tema Dark Neon */
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --border-glow: 0 0 8px var(--primary-color), inset 0 0 6px rgba(0, 255, 204, 0.5);
+    --button-glow: 0 0 8px var(--secondary-color), inset 0 0 6px rgba(255, 0, 255, 0.5);
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Rajdhani', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    overflow: hidden;
+}
+
+/* Contenitore e Sfondo Animato */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    background:
+        linear-gradient(rgba(13, 13, 13, 0.95), rgba(13, 13, 13, 0.95)),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, var(--primary-color) 2px, var(--primary-color) 3px);
+    background-size: 100%, 100% 5px;
+    animation: scanlines 15s linear infinite;
+}
+
+@keyframes scanlines {
+    from { background-position: 0 0; }
+    to { background-position: 0 100vh; }
+}
+
+/* Header */
+.header {
+    width: calc(100% - 40px);
+    height: 10vh;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.header h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* Corpo della schermata */
+.creation-body {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 15px;
+    gap: 30px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.attributes-box, .points-box, .actions-box {
+    padding: 15px;
+}
+
+.attributes-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+
+.attribute-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.attribute-row label {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--primary-color);
+    flex-basis: 150px; /* Larghezza fissa per le etichette */
+    flex-shrink: 0;
+}
+
+/* Stile Input Nome */
+.name-input {
+    flex-grow: 1;
+    background: transparent;
+    border: 1px solid var(--secondary-color);
+    padding: 8px;
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+}
+.name-input:focus {
+    outline: none;
+    box-shadow: var(--button-glow);
+}
+
+/* Stile Punti Disponibili */
+.points-box {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    border: 1px dashed var(--secondary-color);
+}
+
+#points-value {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Stile Pulsanti Azione */
+.actions-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.action-btn {
+    flex-grow: 1;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.action-btn:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* --- STILE SLIDER --- */
+input[type="range"] {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* Track (barra) per Chrome/Safari */
+input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--secondary-color);
+    height: 2px;
+    box-shadow: 0 0 4px var(--secondary-color);
+}
+
+/* Thumb (cursore) per Chrome/Safari */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -7px; /* Centra il cursore sulla barra */
+    background-color: var(--primary-color);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: 1px solid var(--background-color);
+    box-shadow: 0 0 8px var(--primary-color);
+}

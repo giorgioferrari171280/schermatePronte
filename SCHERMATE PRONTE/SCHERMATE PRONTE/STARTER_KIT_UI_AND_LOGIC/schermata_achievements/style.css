@@ -1,0 +1,222 @@
+/*
+ * STILE CSS A TEMA AGRICOLO / RUSTICO
+ * Colori: marroni del legno, beige della iuta, verdi delle piante.
+ * Font: Un carattere più morbido e manuale.
+ * Effetti: Ombre leggere e bordi arrotondati per un look più organico.
+*/
+
+/* Import di un font a tema da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+/* Stili di base e reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Font a tema per tutta l'interfaccia */
+    font-family: 'Patrick Hand', cursive;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Sfondo che ricorda una tela o un muro grezzo */
+body {
+    background-color: #fdf6e3; /* Un beige molto chiaro, colore pergamena */
+    background-image: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png');
+}
+
+/* Contenitore Globale */
+.global-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: #4b3832; /* Marrone scuro per il testo */
+}
+
+/* Header a forma di insegna di legno */
+.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background-color: #8B4513; /* Marrone "sella di cuoio" */
+    color: #fff8e1; /* Testo color crema */
+    border: 4px solid #5C4033; /* Bordo marrone scuro, effetto cornice */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+/* Corpo della schermata: una bacheca di sughero o iuta */
+.main-content {
+    width: 100%;
+    flex-grow: 1;
+    margin: 20px 0;
+    border: 4px dashed #6B4F4F; /* Bordo tratteggiato che ricorda una cucitura */
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #D2B48C; /* Beige/Tan che ricorda la iuta o il sughero */
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Griglia dei Badge */
+.badge-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+}
+
+/* Stile del singolo Badge: una piccola targa di legno */
+.badge {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    background-color: #DEB887; /* Legno di sandalo */
+    border: 3px solid #8B4513; /* Bordo marrone scuro */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.badge.unlocked {
+    cursor: pointer;
+}
+
+.badge.unlocked:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.badge.locked {
+    background-color: #a1887f; /* Marrone-grigiastro */
+    filter: sepia(30%) grayscale(50%);
+    opacity: 0.8;
+}
+
+/* Stile per il testo del badge sbloccato */
+.badge.unlocked .badge-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #4b3832;
+}
+
+/* Stile per il '???' nel badge bloccato */
+.badge.locked .badge-name {
+    font-size: 2.8em; /* Testo ??? più grande */
+    color: #5C4033;
+    font-weight: bold;
+}
+
+.badge img {
+    max-width: 60%;
+    max-height: 40%;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+
+/* Pulsante Indietro: un'altra insegna di legno */
+.back-button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    flex-shrink: 0;
+    color: #fff8e1;
+    background-color: #8B4513;
+    border: 4px solid #5C4033;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s;
+}
+
+.back-button:hover {
+    filter: brightness(1.15); /* NOVITÀ: Effetto hover */
+}
+
+.back-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Stili per la finestra Modale */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 56, 50, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff8e1;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 5px solid #8B4513;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-content img {
+    max-width: 200px; /* MODIFICATO: Immagine più grande */
+    margin-bottom: 20px;
+    background-color: #D2B48C;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    color: #5C4033;
+}
+
+.modal-content p {
+    font-size: 1.3em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#modal-close-button {
+    padding: 10px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #fff8e1;
+    background-color: #6B4F4F;
+    border: 3px solid #4b3832;
+    border-radius: 8px;
+    transition: filter 0.2s; /* NOVITÀ: Transizione per hover */
+}
+
+#modal-close-button:hover {
+    filter: brightness(1.2); /* NOVITÀ: Effetto hover */
+}

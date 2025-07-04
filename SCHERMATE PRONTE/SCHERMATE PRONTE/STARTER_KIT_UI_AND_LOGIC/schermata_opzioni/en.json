@@ -1,0 +1,11 @@
+{
+    "options_title": "OPTIONS",
+    "language_label": "LANGUAGE",
+    "volume_label": "AUDIO VOLUME",
+    "text_size_label": "TEXT SIZE",
+    "theme_label": "PREFERRED THEME",
+    "back_button": "BACK",
+    "text_size_small": "Small",
+    "text_size_normal": "Normal",
+    "text_size_large": "Large"
+}

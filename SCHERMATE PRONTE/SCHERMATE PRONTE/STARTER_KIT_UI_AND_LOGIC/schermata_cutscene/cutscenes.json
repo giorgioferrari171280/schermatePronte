@@ -1,0 +1,27 @@
+[
+  {
+    "id": "cutscene_interludio_1",
+    "image": "assets/img/cutscenes/interludio1.jpg",
+    "text": "CUTSCENE (1/3): Il segnale del nuovo chip ti guida attraverso i data-stream della rete, un torrente infinito di informazioni luminose.",
+    "next_screen": {
+      "id": "cutscene_interludio_2"
+    }
+  },
+  {
+    "id": "cutscene_interludio_2",
+    "image": "assets/img/cutscenes/interludio2.jpg",
+    "text": "CUTSCENE (2/3): L'ologramma di una mappa lampeggia davanti ai tuoi occhi, evidenziando un magazzino abbandonato nel settore industriale.",
+    "next_screen": {
+      "id": "cutscene_interludio_3"
+    }
+  },
+  {
+    "id": "cutscene_interludio_3",
+    "image": "assets/img/cutscenes/interludio3.jpg",
+    "text": "CUTSCENE (3/3): Hai la tua destinazione. È ora di uscire dalla rete e tornare al mondo reale. La tua missione sta per iniziare.",
+    "next_screen": {
+      "file": "capitolo2.json",
+      "id": "c2_scena_iniziale"
+    }
+  }
+]

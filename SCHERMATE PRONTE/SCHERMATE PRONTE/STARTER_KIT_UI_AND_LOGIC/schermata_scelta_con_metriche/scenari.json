@@ -1,0 +1,44 @@
+[
+  {
+    "id_scenario": 1,
+    "titolo_scenario": "Il Mercato del Sabato",
+    "path_immagine_scenario": "assets/img/mercato.png",
+    "narrativa_scenario": "Dopo la siccità, sei riuscito a salvare parte del raccolto. Al mercato settimanale la gente fa la fila e i tuoi prodotti freschi sono molto richiesti. È il momento perfetto per capitalizzare il duro lavoro. Come vuoi procedere con la vendita?",
+    "narrativa_impatto": "La tua strategia di vendita influenzerà le entrate immediate, la tua reputazione tra i clienti e la quantità di prodotto che ti rimarrà a fine giornata.",
+    "scelte": [
+      { "testo": "Vendi tutto subito a prezzo standard", "impatto": { "liquidita": 30, "produzione_prevista": -50 } },
+      { "testo": "Offri sconti per attirare più clienti", "impatto": { "liquidita": 20, "reputazione_locale": 15, "produzione_prevista": -50 } },
+      { "testo": "Vendi solo il meglio a prezzo premium", "impatto": { "liquidita": 15, "reputazione_locale": 20, "produzione_prevista": -30, "stress": 5 } },
+      { "testo": "Trasforma l'invenduto in marmellate", "impatto": { "liquidita": -5, "valore_azienda": 20, "produzione_prevista": -25 } },
+      { "testo": "Porta a casa l'invenduto per la famiglia", "impatto": { "morale_familiare": 15, "produzione_prevista": -15 } }
+    ]
+  },
+  {
+    "id_scenario": 2,
+    "titolo_scenario": "Guasto al Trattore",
+    "path_immagine_scenario": "https://images.unsplash.com/photo-1627992928812-d8a08d277f92?q=80&w=1964&auto=format&fit=crop",
+    "narrativa_scenario": "Proprio mentre prepari il terreno per la prossima semina, il tuo fidato ma vecchio trattore si ferma con un rumore sinistro. Il fumo esce dal motore. Senza di esso, i lavori sono bloccati e rischi di mancare la finestra di semina ideale.",
+    "narrativa_impatto": "Riparare o sostituire il trattore è una decisione critica che metterà a dura prova le tue finanze e il tuo tempo, con conseguenze dirette sull'efficienza futura della tua azienda.",
+    "scelte": [
+      { "testo": "Chiama il meccanico per una riparazione economica", "impatto": { "liquidita": -15, "efficienza_attrezzature": -30, "stress": 10 } },
+      { "testo": "Compra un motore ricondizionato di qualità", "impatto": { "liquidita": -30, "efficienza_attrezzature": -20 } },
+      { "testo": "Investi in un trattore nuovo di zecca", "impatto": { "liquidita": -20, "debito": 50, "efficienza_attrezzature": 20, "morale_familiare": 10 } },
+      { "testo": "Prova a ripararlo da solo con dei tutorial", "impatto": { "liquidita": -5, "stress": 20, "efficienza_attrezzature": -35, "morale_familiare": -10 } },
+      { "testo": "Noleggia un trattore per finire il lavoro", "impatto": { "liquidita": -20, "efficienza_attrezzature": 10, "stress": 5 } }
+    ]
+  },
+  {
+    "id_scenario": 3,
+    "titolo_scenario": "Proposta dal Ristorante Locale",
+    "path_immagine_scenario": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop",
+    "narrativa_scenario": "La fama dei tuoi prodotti ha attirato l'attenzione dello chef del nuovo ristorante gourmet in città. Ti ha offerto un contratto di fornitura esclusiva per i prossimi sei mesi, garantendoti un'entrata fissa.",
+    "narrativa_impatto": "Un contratto esclusivo offre sicurezza economica ma limita la tua libertà di vendita. Rimanere indipendente è più rischioso ma potenzialmente più redditizio.",
+    "scelte": [
+      { "testo": "Accetta subito il contratto", "impatto": { "liquidita": 45, "reputazione_locale": 20, "morale_familiare": 10 } },
+      { "testo": "Rinegozia per un prezzo più alto", "impatto": { "stress": 10, "reputazione_locale": 5 } },
+      { "testo": "Proponi un periodo di prova di un mese", "impatto": { "liquidita": 5, "reputazione_locale": 10 } },
+      { "testo": "Rifiuta per rimanere indipendente", "impatto": { "morale_familiare": 5, "stress": -5 } },
+      { "testo": "Accetta, ma solo per alcune colture", "impatto": { "liquidita": 10, "reputazione_locale": 15 } }
+    ]
+  }
+]

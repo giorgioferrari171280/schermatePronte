@@ -1,0 +1,148 @@
+/* Stile Globale e Tema Dark Neon (dal tuo esempio) */
+:root {
+    --primary-color: #00ffcc;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --border-glow: 0 0 8px var(--primary-color), inset 0 0 6px rgba(0, 255, 204, 0.5);
+    --button-glow: 0 0 10px var(--secondary-color), inset 0 0 8px rgba(255, 0, 255, 0.5);
+    --font-primary: 'Orbitron', sans-serif;
+    --font-secondary: 'Rajdhani', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    overflow: hidden;
+}
+
+/* Contenitore principale (adattato dal nostro layout precedente) */
+.global-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Header (usa il tuo stile) */
+.header {
+    flex-basis: 10%;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+.header h1 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.2rem, 3vw, 2.2rem);
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+    text-transform: uppercase;
+}
+
+/* Corpo della schermata (il nostro layout 60/40) */
+.screen-body {
+    display: flex;
+    flex-grow: 1;
+    gap: 20px;
+    overflow: hidden;
+}
+
+/* Colonna sinistra per l'immagine */
+.left-column {
+    flex: 60%; /* Occupa il 60% dello spazio */
+}
+
+/* Colonna destra per testo e pulsante */
+.right-column {
+    flex: 40%; /* Occupa il 40% dello spazio */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Contenitore Immagine (adattato) */
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-style: italic;
+}
+
+/* Box Narrativa (adattato) */
+.narrative-box {
+    flex-grow: 1; /* Occupa lo spazio disponibile */
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(--border-glow);
+    overflow-y: auto;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+}
+
+/* Contenitore per il pulsante "CONTINUA" */
+.action-box {
+    flex-basis: 20%; /* Altezza definita per il box del pulsante */
+    min-height: 80px;
+    display: flex;
+}
+
+/* Pulsante "CONTINUA" (usa lo stile del tuo action-button) */
+.continue-button {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    box-shadow: var(--button-glow);
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.continue-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
+}
+
+
+/* ---- Stile Barra di Scorrimento (dal tuo esempio) ---- */
+.narrative-box::-webkit-scrollbar {
+  width: 10px;
+}
+.narrative-box::-webkit-scrollbar-track {
+  background: rgba(13, 13, 13, 0.8);
+  border-radius: 5px;
+}
+.narrative-box::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border: 1px solid var(--background-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+.narrative-box::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+  box-shadow: 0 0 10px var(--primary-color);
+}

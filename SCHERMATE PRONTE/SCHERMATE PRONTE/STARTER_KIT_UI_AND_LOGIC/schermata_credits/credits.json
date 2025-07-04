@@ -1,0 +1,13 @@
+{
+  "credits": {
+    "ideato_da": "Nome Creatore",
+    "musica_di": "Nome Musicista",
+    "immagini_di": "Nome Artista",
+    "script": "Nome Scripter",
+    "testi_di": "Nome Scrittore"
+  },
+  "programmer": {
+    "name": "Il Programmatore Fantastico",
+    "image_path": "assets/programmer-image.png"
+  }
+}

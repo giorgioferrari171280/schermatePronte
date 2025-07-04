@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scegli Slot Salvataggio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <div class="global-container">
+        <header>
+            <h1>Scegli lo Slot di Salvataggio</h1>
+        </header>
+
+        <main class="screen-body">
+            
+            <div class="save-grid">
+                <div class="save-slot occupied" data-slot="1">
+                    <div class="slot-title">SLOT 1</div>
+                    <div class="slot-info">
+                        <p>Nome: <span>Kael</span></p>
+                        <p>Livello: <span>42</span></p>
+                        <p>Data: <span>02/07/2025</span></p>
+                    </div>
+                </div>
+                <div class="save-slot" data-slot="2">
+                    <div class="slot-title">SLOT 2</div>
+                </div>
+                <div class="save-slot" data-slot="3"><div class="slot-title">SLOT 3</div></div>
+                <div class="save-slot" data-slot="4"><div class="slot-title">SLOT 4</div></div>
+                <div class="save-slot" data-slot="5"><div class="slot-title">SLOT 5</div></div>
+                <div class="save-slot occupied" data-slot="6">
+                    <div class="slot-title">SLOT 6</div>
+                     <div class="slot-info">
+                        <p>Nome: <span>Jynx</span></p>
+                        <p>Livello: <span>18</span></p>
+                        <p>Data: <span>28/06/2025</span></p>
+                    </div>
+                </div>
+                <div class="save-slot" data-slot="7"><div class="slot-title">SLOT 7</div></div>
+                <div class="save-slot" data-slot="8"><div class="slot-title">SLOT 8</div></div>
+            </div>
+
+            <div class="button-panel">
+                <button id="btn-back" class="control-button">Indietro</button>
+                <button id="btn-start" class="control-button" disabled>Inizia!</button>
+            </div>
+
+        </main>
+    </div>
+
+    <div id="modal-overlay" class="hidden">
+        <div class="modal-content">
+            <h2>Conferma Sovrascrittura</h2>
+            <p>Questo slot contiene già dei dati di salvataggio. Sei sicuro di volerli eliminare e iniziare una nuova partita?</p>
+            <div class="modal-buttons">
+                <button id="modal-confirm" class="control-button">Conferma</button>
+                <button id="modal-cancel" class="control-button secondary">Annulla</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

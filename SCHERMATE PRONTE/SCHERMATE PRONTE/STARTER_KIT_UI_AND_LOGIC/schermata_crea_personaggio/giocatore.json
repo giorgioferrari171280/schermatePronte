@@ -1,0 +1,54 @@
+{
+  "nome": "",
+  "puntiDisponibiliIniziali": 280,
+  "attributi": [
+    {
+      "nome": "FORZA",
+      "valore": 0
+    },
+    {
+      "nome": "DESTREZZA",
+      "valore": 0
+    },
+    {
+      "nome": "COSTITUZIONE",
+      "valore": 0
+    },
+    {
+      "nome": "INTELLIGENZA",
+      "valore": 0
+    },
+    {
+      "nome": "PERCEZIONE",
+      "valore": 0
+    },
+    {
+      "nome": "CARISMA",
+      "valore": 0
+    },
+    {
+      "nome": "HACKING",
+      "valore": 0
+    },
+    {
+      "nome": "TECNOLOGIA",
+      "valore": 0
+    },
+    {
+      "nome": "FURTIVITÀ",
+      "valore": 0
+    },
+    {
+      "nome": "VOLONTÀ",
+      "valore": 0
+    },
+    {
+      "nome": "REAZIONE",
+      "valore": 0
+    }
+  ],
+  "opzioni": {
+    "lingua": "it",
+    "audio": 100
+  }
+}

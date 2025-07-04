@@ -1,0 +1,129 @@
+/* Stile Globale e Sfondo Animato */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive; /* Font in stile pixel art */
+    background-color: #3d231a; /* Un colore di sfondo di riserva */
+    background-image: url('assets/background.png'); /* Sostituisci con il tuo sfondo */
+    background-size: cover;
+    color: #442d1e; /* Marrone scuro per il testo */
+    overflow: hidden; /* Nasconde lo scroll */
+    animation: move-background 60s linear infinite;
+}
+
+/* Animazione per lo sfondo */
+@keyframes move-background {
+    from {
+        background-position-y: 0px;
+    }
+    to {
+        background-position-y: 1080px; /* Altezza dell'immagine di sfondo per un loop perfetto */
+    }
+}
+
+/* Contenitore padre che occupa tutto lo schermo */
+.credits-container {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box; /* Assicura che padding e border non alterino la dimensione totale */
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Spazio dai bordi dello schermo */
+}
+
+/* Header */
+.credits-header {
+    flex-basis: 10%; /* Occupa il 10% dell'altezza */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c69b7b; /* Colore legno/pergamena */
+    border: 4px solid #442d1e; /* Bordo marrone scuro */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+
+.credits-header h1 {
+    font-size: 2vw; /* Dimensione testo reattiva */
+    color: #fff;
+    text-shadow: 2px 2px #442d1e;
+}
+
+/* Corpo della schermata (contenitore delle due colonne) */
+.credits-body {
+    flex-grow: 1; /* Occupa lo spazio rimanente */
+    display: flex;
+    gap: 20px; /* Spazio tra le due colonne */
+}
+
+/* Colonne */
+.left-column {
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spazia gli elementi verticalmente */
+}
+
+.right-column {
+    flex-basis: 60%;
+}
+
+/* Stile per le etichette e i pulsanti a sinistra */
+.info-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spazio tra le etichette */
+}
+
+.label-box {
+    background-color: #fdf7e4; /* Colore pergamena chiara */
+    border: 3px solid #7a5c49; /* Bordo color legno */
+    padding: 15px;
+    font-size: 1.1vw;
+    text-align: center;
+}
+
+.back-button {
+    background-color: #c69b7b;
+    border: 3px solid #442d1e;
+    padding: 15px;
+    margin: 10px 0; /* Come da richiesta, padding esterno */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2vw;
+    color: #fff;
+    text-shadow: 2px 2px #442d1e;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #dcb89e; /* Si schiarisce al passaggio del mouse */
+}
+
+/* Riquadro per l'immagine a destra */
+.right-column .image-container {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin-left: 10px; /* Come da richiesta, distanziato dalla colonna sinistra */
+    background-color: #fdf7e4;
+    border: 4px solid #442d1e;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#image-placeholder {
+    font-size: 1.5vw;
+    text-align: center;
+    color: #7a5c49;
+}
+
+#programmer-image {
+    display: none; /* Nascosta di default */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'immagine copre il box senza deformarsi */
+}

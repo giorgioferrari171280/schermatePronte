@@ -1,0 +1,217 @@
+/* Stili Generali e Sfondo */
+html {
+    /* Impostazione base per la dimensione del font (sulla radice) */
+    font-size: 16px; 
+    transition: font-size 0.3s ease-in-out;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Patrick Hand', cursive;
+    background-color: #f4e5c3; /* Beige Fieno */
+    background-image: url('https://www.transparenttextures.com/patterns/straw-net.png');
+    animation: animated-background 40s linear infinite;
+}
+
+/* Classi per il cambio dinamico della dimensione font (applicate a HTML) */
+html.font-small { font-size: 14px; }
+html.font-normal { font-size: 16px; }
+html.font-large { font-size: 18px; }
+
+@keyframes animated-background {
+    from { background-position: 0 0; }
+    to { background-position: 500px 500px; }
+}
+
+/* Contenitore Globale */
+.global-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* Header */
+.options-header {
+    width: calc(100% - 40px);
+    min-height: 10%;
+    margin: 20px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D2B48C; /* Legno Chiaro */
+    border: 4px solid #8B4513; /* Legno Scuro */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.options-header h1 {
+    font-size: 2rem; /* Usare unità relative */
+    color: #8B4513;
+    margin: 0;
+    padding: 10px;
+    text-shadow: 1px 1px #f4e5c3;
+}
+
+/* Corpo della Schermata */
+.options-body {
+    width: 60%;
+    max-width: 800px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #D2B48C;
+    border: 4px solid #8B4513;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.options-grid {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.labels-column, .controls-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.label-box {
+    padding: 10px;
+    font-size: 1.5rem; /* Unità relativa */
+    color: #8B4513;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: #f4e5c3;
+    border-radius: 10px;
+    border: 2px solid #8B4513;
+    box-sizing: border-box;
+}
+
+/* Contenitore invisibile per i controlli */
+.control-box {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: transparent; /* INVISIBILE */
+    border: 2px solid transparent; /* INVISIBILE */
+    box-sizing: border-box;
+}
+
+/* Stile per i controlli specifici */
+.dropdown-menu {
+    width: 100%;
+    padding: 5px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem; /* Unità relativa */
+    border: 2px solid #8B4513;
+    border-radius: 8px;
+    background-color: white;
+    color: #8B4513;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.dropdown-menu:hover {
+    box-shadow: 0 0 10px rgba(139, 69, 19, 0.5);
+}
+
+.audio-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 18px;
+    background: #f4e5c3;
+    border-radius: 10px;
+    border: 2px solid #8B4513;
+    outline: none;
+    cursor: pointer;
+}
+
+.audio-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    background: #556B2F;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.audio-slider::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+    background: #556B2F;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+/* Icona Audio */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.audio-icon-box {
+    background-color: #556B2F;
+    padding: 10px;
+    border-radius: 12px;
+    border: 3px solid #8B4513;
+    display: inline-flex;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.audio-icon-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Pulsante Indietro */
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.back-button {
+    padding: 15px 50px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.8rem; /* Unità relativa */
+    color: white;
+    background-color: #8B4513;
+    border: 4px solid #f4e5c3;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    transition: all 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.back-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}

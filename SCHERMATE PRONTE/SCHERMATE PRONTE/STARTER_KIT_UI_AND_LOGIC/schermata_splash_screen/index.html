@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caricamento Gioco</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-padre">
+        
+        <div class="riquadro-logo">
+            LOGO DEL GIOCO
+        </div>
+
+        <div id="loading-section">
+            <div class="loading-bar-container">
+                <div class="loading-bar-fill"></div>
+            </div>
+        </div>
+        
+        <div id="play-button-container" class="play-button">
+            GIOCA!
+        </div>
+
+    </div>
+
+    <script>
+        // Attendi 6 secondi (6000 millisecondi)
+        setTimeout(() => {
+            // Nascondi la sezione di caricamento
+            const loadingSection = document.getElementById('loading-section');
+            if (loadingSection) {
+                loadingSection.style.display = 'none';
+            }
+
+            // Mostra il pulsante "GIOCA!"
+            const playButton = document.getElementById('play-button-container');
+            if (playButton) {
+                playButton.style.visibility = 'visible';
+            }
+        }, 6000);
+    </script>
+
+</body>
+</html>
