@@ -81,8 +81,8 @@ body {
 
 /* Pulsanti del menu */
 .menu-button {
-    width: 100%;
-    padding: 15px;
+    width: 70%;
+    padding: 10px;
     background: transparent;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
@@ -92,6 +92,7 @@ body {
     text-align: center;
     text-transform: uppercase;
     transition: background-color 0.3s, color 0.3s;
+    align-self: center;
 }
 
 .menu-button:hover {

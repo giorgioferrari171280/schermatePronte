@@ -4,9 +4,9 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Impedisce qualsiasi scroll a livello di pagina */
+    overflow: hidden;
     font-family: 'Cormorant Garamond', serif;
-    background-color: #5d5244; /* Sfondo applicato al body */
+    background-color: #5d5244;
 }
 
 * {
@@ -18,9 +18,6 @@ h1, h2, h3, button {
     font-family: 'Cinzel', serif;
 }
 
-/* Il nostro "contenitore padre" che si adatta perfettamente 
-   allo spazio definito da html e body.
-*/
 .game-container {
     width: 100%;
     height: 100%;
@@ -46,8 +43,6 @@ h1, h2, h3, button {
 }
 
 /* ----- ELEMENTI DELLA COLONNA SINISTRA ----- */
-
-/* Titolo - Targa d'ottone */
 .screen-title {
     background: linear-gradient(to bottom, #d4af37, #b8860b);
     border: 2px solid #6c541e;
@@ -60,44 +55,29 @@ h1, h2, h3, button {
     font-size: 1.5em;
     font-weight: 700;
 }
-
-/* Box Narrativa - Pagina di diario */
 .narrative-box {
-    background-color: #f5f5dc; /* Beige */
+    background-color: #f5f5dc;
     border: 1px solid #c9b79c;
     box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
     padding: 15px;
     flex-grow: 1;
     margin-bottom: 20px;
-    overflow-y: auto; /* Scrollbar se il testo eccede */
+    overflow-y: auto;
     font-size: 1.1em;
     line-height: 1.6;
 }
-
-/* Stile della Scrollbar */
-.narrative-box::-webkit-scrollbar {
-  width: 10px;
-}
-.narrative-box::-webkit-scrollbar-track {
-  background: #e6dcc9;
-}
-.narrative-box::-webkit-scrollbar-thumb {
-  background-color: #8b4513;
-  border-radius: 20px;
-  border: 2px solid #d4af37;
-}
-
-/* Contenitore Pulsanti Scelta - Tasca in cuoio */
+.narrative-box::-webkit-scrollbar { width: 10px; }
+.narrative-box::-webkit-scrollbar-track { background: #e6dcc9; }
+.narrative-box::-webkit-scrollbar-thumb { background-color: #8b4513; border-radius: 20px; border: 2px solid #d4af37; }
 .choice-buttons-container {
-    border: 3px dashed #8b4513; /* Marrone cuoio */
+    border: 3px dashed #8b4513;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Spazio tra i pulsanti */
+    gap: 15px;
 }
-
 .choice-button {
-    background-color: #f0e68c; /* Khaki/Avorio */
+    background-color: #f0e68c;
     border: 2px outset #a89d77;
     padding: 12px;
     cursor: pointer;
@@ -105,25 +85,15 @@ h1, h2, h3, button {
     font-weight: 700;
     transition: all 0.2s ease;
 }
-
-.choice-button:hover {
-    background-color: #fffacd;
-    border-color: #8b4513;
-}
-
-.choice-button:active {
-    border-style: inset;
-}
+.choice-button:hover { background-color: #fffacd; border-color: #8b4513; }
+.choice-button:active { border-style: inset; }
 
 
 /* ----- ELEMENTI DELLA COLONNA DESTRA ----- */
-
-/* Immagine - Fotografia d'epoca */
-.scene-image-container {
+.scene-media-container {
     flex-grow: 1;
     flex-shrink: 1;
     min-height: 0;
-    
     margin: 0;
     background-color: #1a1a1a;
     border: 10px solid #2f261c;
@@ -133,28 +103,25 @@ h1, h2, h3, button {
     justify-content: center;
 }
 
-#scene-image {
-    /* --- MODIFICA CHIAVE --- */
-    /* Usiamo "cover" per riempire lo spazio, tagliando l'eccesso */
+/* Regola chiave: si applica SIA all'immagine CHE al video */
+#scene-image, #scene-video {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    /* L'aspect-ratio non è più necessario qui perché object-fit gestisce le proporzioni interne */
+    object-fit: cover; /* Riempie lo spazio, tagliando l'eccesso se serve */
+    display: none; /* Nascosti di default, li mostra lo script */
 }
 
-/* Menu Principale - Plancia di comando */
 .main-menu {
     flex-shrink: 0;
     display: flex;
     justify-content: space-around;
     padding: 15px;
-    background-color: #3e3225; /* Legno scuro */
+    background-color: #3e3225;
     margin-top: 20px;
     box-shadow: 0 -3px 10px rgba(0,0,0,0.5);
 }
-
 .main-menu button {
-    background-color: #d4af37; /* Ottone */
+    background-color: #d4af37;
     color: #4a3818;
     border: 2px solid #6c541e;
     padding: 10px 20px;
@@ -163,7 +130,4 @@ h1, h2, h3, button {
     font-weight: 700;
     transition: background-color 0.2s;
 }
-
-.main-menu button:hover {
-    background-color: #e7c86a;
-}
+.main-menu button:hover { background-color: #e7c86a; }

@@ -1,0 +1,194 @@
+/* --- IMPOSTAZIONI GLOBALI E SFONDO --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    /* Aggiunto Rajdhani per i testi, Orbitron rimane per i titoli */
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #050a14;
+    color: #e0e0e0;
+    overflow: hidden; /* Impedisce lo scrolling */
+}
+
+.screen-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: radial-gradient(ellipse at bottom, #0d1a3a 0%, #050a14 70%);
+}
+
+/* --- HEADER --- */
+.header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00faff;
+    box-shadow: 0 0 15px #00faff, inset 0 0 15px #00faff;
+    background-color: rgba(0, 255, 255, 0.05);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5vw;
+    color: #ffffff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #00faff, 0 0 20px #00faff;
+}
+
+/* --- CORPO PRINCIPALE --- */
+.main-body {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    gap: 20px;
+}
+
+/* --- SEZIONE SINISTRA (DLC) --- */
+.left-section {
+    width: 75%;
+    height: 100%;
+    padding: 20px;
+    border: 2px dashed rgba(255, 0, 255, 0.7);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.dlc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Griglia 1x4 */
+    gap: 20px;
+    height: 100%;
+}
+
+/* --- STILE DELLE NUOVE CARD DLC --- */
+.dlc-card {
+    border: 2px solid #ff00ff;
+    background: rgba(255, 0, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex; /* Modificato */
+    flex-direction: column; /* Modificato */
+    overflow: hidden; /* Nasconde parti dell'immagine che potrebbero fuoriuscire */
+}
+
+.dlc-card:hover {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 20px #ff00ff;
+    transform: translateY(-10px);
+}
+
+.dlc-card.selected {
+    background: rgba(0, 255, 255, 0.2);
+    border-color: #00faff;
+    box-shadow: 0 0 25px #00faff, inset 0 0 15px #00faff;
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* NUOVO: Contenitore Immagine (2/3 superiori) */
+.dlc-image-container {
+    height: 66.66%;
+    width: 100%;
+}
+
+.dlc-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene le proporzioni e riempie lo spazio */
+}
+
+/* NUOVO: Contenitore Info (1/3 inferiore) */
+.dlc-info {
+    height: 33.34%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge titolo/descrizione in alto e prezzo in basso */
+}
+
+.dlc-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2vw;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff00ff;
+    margin-bottom: 5px;
+}
+
+.dlc-card.selected .dlc-title {
+    text-shadow: 0 0 5px #00faff;
+}
+
+.dlc-description {
+    font-size: 0.9vw;
+    color: #c0c0c0;
+    flex-grow: 1; /* Permette alla descrizione di occupare lo spazio disponibile */
+}
+
+.dlc-price {
+    font-size: 1.1vw;
+    font-weight: bold;
+    color: #00faff;
+    text-align: right;
+    text-shadow: 0 0 8px #00faff;
+}
+
+
+/* --- SEZIONE DESTRA (AZIONI) --- */
+.right-section {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spinge i bottoni ai lati */
+    padding: 0 10px; 
+}
+
+.action-button {
+    width: 100%;
+    padding: 20px 10px;
+    background: transparent;
+    border: 2px solid #00faff;
+    color: #00faff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #00faff;
+    text-shadow: 0 0 5px #00faff;
+}
+
+.action-button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 20px #00faff, 0 0 30px #00faff;
+}
+
+.action-button:disabled {
+    border-color: #555;
+    color: #555;
+    cursor: not-allowed;
+    box-shadow: none;
+    text-shadow: none;
+    background-color: rgba(100, 100, 100, 0.1);
+}
+
+#purchase-button:not(:disabled) {
+    border-color: #ff00ff;
+    color: #ff00ff;
+    box-shadow: 0 0 10px #ff00ff;
+    text-shadow: 0 0 5px #ff00ff;
+}
+
+#purchase-button:not(:disabled):hover {
+    background-color: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
