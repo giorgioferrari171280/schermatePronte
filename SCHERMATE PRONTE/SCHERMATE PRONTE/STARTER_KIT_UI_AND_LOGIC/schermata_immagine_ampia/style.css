@@ -1,0 +1,169 @@
+/* Stile Globale e Contenitore Padre */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Impedisce qualsiasi scroll a livello di pagina */
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #5d5244; /* Sfondo applicato al body */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Font d'epoca */
+h1, h2, h3, button {
+    font-family: 'Cinzel', serif;
+}
+
+/* Il nostro "contenitore padre" che si adatta perfettamente 
+   allo spazio definito da html e body.
+*/
+.game-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color: #3a2e1d;
+}
+
+/* Colonne */
+.left-column {
+    flex: 0 0 35%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ----- ELEMENTI DELLA COLONNA SINISTRA ----- */
+
+/* Titolo - Targa d'ottone */
+.screen-title {
+    background: linear-gradient(to bottom, #d4af37, #b8860b);
+    border: 2px solid #6c541e;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5), inset 0 0 2px #fff7d6;
+    padding: 10px 15px;
+    text-align: center;
+    color: #4a3818;
+    text-shadow: 1px 1px 1px #f3e5ab;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+/* Box Narrativa - Pagina di diario */
+.narrative-box {
+    background-color: #f5f5dc; /* Beige */
+    border: 1px solid #c9b79c;
+    box-shadow: 3px 3px 8px rgba(0,0,0,0.4);
+    padding: 15px;
+    flex-grow: 1;
+    margin-bottom: 20px;
+    overflow-y: auto; /* Scrollbar se il testo eccede */
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Stile della Scrollbar */
+.narrative-box::-webkit-scrollbar {
+  width: 10px;
+}
+.narrative-box::-webkit-scrollbar-track {
+  background: #e6dcc9;
+}
+.narrative-box::-webkit-scrollbar-thumb {
+  background-color: #8b4513;
+  border-radius: 20px;
+  border: 2px solid #d4af37;
+}
+
+/* Contenitore Pulsanti Scelta - Tasca in cuoio */
+.choice-buttons-container {
+    border: 3px dashed #8b4513; /* Marrone cuoio */
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spazio tra i pulsanti */
+}
+
+.choice-button {
+    background-color: #f0e68c; /* Khaki/Avorio */
+    border: 2px outset #a89d77;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.choice-button:hover {
+    background-color: #fffacd;
+    border-color: #8b4513;
+}
+
+.choice-button:active {
+    border-style: inset;
+}
+
+
+/* ----- ELEMENTI DELLA COLONNA DESTRA ----- */
+
+/* Immagine - Fotografia d'epoca */
+.scene-image-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-height: 0;
+    
+    margin: 0;
+    background-color: #1a1a1a;
+    border: 10px solid #2f261c;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#scene-image {
+    /* --- MODIFICA CHIAVE --- */
+    /* Usiamo "cover" per riempire lo spazio, tagliando l'eccesso */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    /* L'aspect-ratio non è più necessario qui perché object-fit gestisce le proporzioni interne */
+}
+
+/* Menu Principale - Plancia di comando */
+.main-menu {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: #3e3225; /* Legno scuro */
+    margin-top: 20px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.5);
+}
+
+.main-menu button {
+    background-color: #d4af37; /* Ottone */
+    color: #4a3818;
+    border: 2px solid #6c541e;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 700;
+    transition: background-color 0.2s;
+}
+
+.main-menu button:hover {
+    background-color: #e7c86a;
+}
