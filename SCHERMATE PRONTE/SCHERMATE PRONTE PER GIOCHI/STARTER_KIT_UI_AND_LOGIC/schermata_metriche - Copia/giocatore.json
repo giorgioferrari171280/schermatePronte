@@ -1,0 +1,18 @@
+{
+    "metriche": [
+        { "nome": "Resistenza al Calore", "valore": 80 },
+        { "nome": "Abilità di Caccia", "valore": 65 },
+        { "nome": "Diplomazia Tribale", "valore": 35 },
+        { "nome": "Orientamento", "valore": 75 },
+        { "nome": "Erudizione Coloniale", "valore": 45 },
+        { "nome": "Vigore Fisico", "valore": 90 },
+        { "nome": "Fortuna", "valore": 60 },
+        { "nome": "Conoscenza Flora", "valore": 70 },
+        { "nome": "Abilità di Negoziazione", "valore": 50 },
+        { "nome": "Resistenza Malattie", "valore": 30 },
+        { "nome": "Carisma", "valore": 85 },
+        { "nome": "Mira con Fucile", "valore": 55 },
+        { "nome": "Fama", "valore": 95 },
+        { "nome": "Sopravvivenza", "valore": 88 }
+    ]
+}

@@ -1,0 +1,188 @@
+/* --- Variabili e Stile Globale --- */
+:root {
+    --bg-color: #0d0c1d;
+    --primary-neon: #61f4de;
+    --secondary-neon: #f43f8e;
+    --text-color: #e0fbfc;
+    --border-color: #1a3a5a;
+    --font-family: 'Share Tech Mono', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 75.5%; }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-size: 1.8rem;
+}
+
+body::after { content: ' '; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(0deg, rgba(13, 12, 29, 0) 50%, rgba(0, 0, 0, 0.4) 50%); background-size: 100% 4px; opacity: 0.2; pointer-events: none; animation: scanlines 0.2s linear infinite; }
+@keyframes scanlines { from { background-position: 0 0; } to { background-position: 0 4px; } }
+
+.global-container { width: 100%; height: 100%; display: flex; flex-direction: column; }
+
+/* --- Header --- */
+header { display: flex; align-items: center; width: 100%; padding: 20px; gap: 15px; flex-shrink: 0; }
+#location-name-container { flex-grow: 1; border: 1px solid var(--primary-neon); box-shadow: 0 0 8px var(--primary-neon); display: flex; justify-content: center; align-items: center; padding: 10px; min-height: 50px; }
+#location-name { font-size: 2.6rem; text-transform: uppercase; text-shadow: 0 0 5px var(--primary-neon); text-align: center; }
+.header-nav { display: flex; gap: 10px; }
+.header-nav button { padding: 15px 25px; }
+
+/* --- Corpo Principale --- */
+#main-content { flex-grow: 1; display: flex; width: 100%; overflow: hidden; }
+#right-column { width: 50%; display: flex; justify-content: center; align-items: center; padding: 10px; }
+
+
+/* --- Colonna Sinistra con CSS Grid --- */
+#left-column {
+    width: 50%;
+    padding: 10px;
+    display: grid;
+    /* Righe: Narrativa, CONTENITORE UNICO, Navigazione */
+    grid-template-rows: auto 1fr auto;
+    gap: 10px;
+    overflow: hidden;
+}
+
+#narrative-box {
+    height: 25vh;
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    overflow-y: auto;
+    font-size: 1.7rem;
+}
+
+/* MODIFICA: Box unico unificato scrollabile */
+#unified-data-box {
+    flex: 1; /* Riempie lo spazio disponibile */
+    overflow-y: auto;
+    padding: 15px;
+    border: 2px solid var(--primary-neon);
+    background: rgba(13, 12, 29, 0.8);
+}
+
+.data-box {
+    border: 2px dashed var(--primary-neon);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.data-section {
+    margin-bottom: 25px;
+}
+
+.data-section:last-child {
+    margin-bottom: 0;
+}
+
+.data-section h3 {
+    color: var(--primary-neon);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--primary-neon);
+    padding-bottom: 8px;
+}
+
+.data-section-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.data-item { display: flex; justify-content: space-between; align-items: center; padding: 6px; background: rgba(26, 58, 90, 0.3); border: 1px solid var(--border-color); font-size: 1.6rem; }
+.data-item span:last-child { font-weight: bold; color: var(--primary-neon); }
+
+/* MODIFICA: Solo il box delle azioni è scrollabile */
+#action-buttons {
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: start;
+    gap: 8px;
+    padding: 10px;
+}
+.action-btn { padding: 10px; }
+
+#nav-pad { display: flex; justify-content: center; gap: 10px; align-items: center; }
+.nav-btn { padding: 15px; min-width: 50px; text-align: center; }
+.move-btn { padding: 15px 25px; font-weight: bold; background-color: var(--secondary-neon); color: var(--bg-color); border: 1px solid var(--secondary-neon); }
+.move-btn:hover { background-color: transparent; color: var(--secondary-neon); box-shadow: 0 0 15px var(--secondary-neon); }
+
+#location-image { 
+    width: 100%; 
+    height: auto; 
+    max-height: 100%; 
+    object-fit: cover; 
+    aspect-ratio: 1 / 1; 
+    border: 1px solid var(--secondary-neon); 
+    box-shadow: 0 0 12px var(--secondary-neon); 
+}
+
+/* Stili personalizzati per la scrollbar */
+#unified-data-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+#unified-data-box::-webkit-scrollbar-track {
+    background: rgba(13, 12, 29, 0.8);
+    border-radius: 4px;
+}
+
+#unified-data-box::-webkit-scrollbar-thumb {
+    background: var(--primary-neon);
+    border-radius: 4px;
+    box-shadow: 0 0 4px var(--primary-neon);
+}
+
+#unified-data-box::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-neon);
+    box-shadow: 0 0 6px var(--secondary-neon);
+}
+
+/* Firefox scrollbar */
+#unified-data-box {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-neon) rgba(13, 12, 29, 0.8);
+}
+
+/* --- Stili Comuni Pulsanti --- */
+button { background-color: transparent; border: 1px solid var(--primary-neon); color: var(--primary-neon); font-family: var(--font-family); cursor: pointer; transition: all 0.2s ease-in-out; text-transform: uppercase; text-shadow: 0 0 3px var(--primary-neon); font-size: 1.7rem; }
+button:hover { background-color: var(--primary-neon); color: var(--bg-color); box-shadow: 0 0 15px var(--primary-neon); text-shadow: none; }
+button.disabled { border-color: var(--border-color); color: var(--border-color); text-shadow: none; cursor: not-allowed; pointer-events: none; }
+button.disabled:hover { background-color: transparent; box-shadow: none; }
+
+/* === MEDIA QUERIES PER LA RESPONSIVITÀ === */
+@media (max-width: 1024px) {
+    body { overflow: auto; }
+    #main-content { flex-direction: column; align-items: center; overflow: visible; }
+    #left-column, #right-column { width: 100%; max-width: 800px; }
+    #left-column { display: flex; flex-direction: column; height: auto; }
+    #unified-data-box {
+        flex: none;
+        max-height: 40vh;
+    }
+    #action-buttons { max-height: 25vh; }
+    #right-column { 
+        order: -1; 
+        height: auto; 
+        max-height: 50vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #location-image {
+        max-width: 50vh; /* Limita la larghezza per mantenere il ratio 1:1 */
+        max-height: 50vh;
+        width: auto;
+        height: auto;
+    }
+    header { flex-wrap: wrap; justify-content: center; }
+}

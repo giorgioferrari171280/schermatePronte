@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schermata Esplorazione</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="global-container">
+        <header>
+            <div id="location-name-container">
+                <h1 id="location-name">NOME LOCATION</h1>
+            </div>
+            <nav class="header-nav">
+                <button id="home-btn">home</button>
+                <button id="options-btn">opzioni</button>
+            </nav>
+        </header>
+
+        <main id="main-content">
+            <div id="left-column">
+                <div id="narrative-box">
+                    <p id="narrative-text">Spazio per inserire narrativa della schermata...</p>
+                </div>
+                
+                <div id="unified-data-box" class="data-box">
+                    <div class="data-section">
+                        <h3>RISORSE</h3>
+                        <div id="resources-area" class="data-section-content"></div>
+                    </div>
+                    
+                    <div class="data-section">
+                        <h3>ATTRIBUTI</h3>
+                        <div id="player-stats-area" class="data-section-content"></div>
+                    </div>
+
+                    <div class="data-section">
+                        <h3>FAZIONI</h3>
+                        <div id="faction-scores-area" class="data-section-content"></div>
+                    </div>
+                </div>
+
+                <div id="action-buttons" class="data-box">
+                    </div>
+
+                <div id="nav-pad">
+                    <button id="move-btn" class="move-btn">MUOVI</button>
+                    <button id="nav-n" class="nav-btn disabled" data-direction="N">N</button>
+                    <button id="nav-w" class="nav-btn disabled" data-direction="W">W</button>
+                    <button id="nav-s" class="nav-btn disabled" data-direction="S">S</button>
+                    <button id="nav-e" class="nav-btn disabled" data-direction="E">E</button>
+                </div>
+            </div>
+
+            <div id="right-column">
+                <img id="location-image" src="https://via.placeholder.com/600" alt="Immagine della location">
+            </div>
+        </main>
+    </div>
+</body>
+</html>
