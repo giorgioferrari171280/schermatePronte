@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         actionChosen: false,
         moveMode: false, // Modalità movimento attivata
         playerFlags: new Set(), // Set per gestire i flag delle azioni completate
+        actionClickCount: {}, // Contatore per i click delle azioni
         playerResources: {
             'Crediti': 1570,
             'Chip Dati': 5,
@@ -143,9 +144,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const button = document.createElement('button');
             button.className = 'action-btn';
             button.dataset.actionKey = key;
-            button.textContent = value;
             
-            // Tutti i pulsanti sono sempre cliccabili
+            // Determina il testo del pulsante
+            const actionData = locationData.azioni_effetti && locationData.azioni_effetti[key];
+            const actionKey = `${locationId}_${key}`;
+            const clickCount = gameState.actionClickCount[actionKey] || 0;
+            
+            if (actionData && actionData.cambio_testo && clickCount > 0) {
+                button.textContent = actionData.cambio_testo;
+            } else {
+                button.textContent = value;
+            }
+            
+            // Controlla se il pulsante deve essere disattivato
+            if (actionData && actionData.disattiva_dopo_uso && clickCount > 0) {
+                button.classList.add('disabled');
+                console.log(`Pulsante ${key} disattivato - click count: ${clickCount}`);
+            }
             
             actionButtonsEl.appendChild(button);
         }
@@ -158,39 +173,68 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- GESTORI DI EVENTI ---
     actionButtonsEl.addEventListener('click', (e) => {
         if (e.target.classList.contains('action-btn') && !e.target.classList.contains('disabled')) {
+            console.log(`Click su pulsante: ${e.target.textContent}, disabled: ${e.target.classList.contains('disabled')}`);
             const actionKey = e.target.dataset.actionKey;
             const locationData = allLocationData[gameState.currentLocationId];
+            const actionKeyFull = `${gameState.currentLocationId}_${actionKey}`;
             
             console.log(`Azione scelta: ${e.target.textContent}`);
             
+            // Incrementa il contatore dei click
+            if (!gameState.actionClickCount[actionKeyFull]) {
+                gameState.actionClickCount[actionKeyFull] = 0;
+            }
+            gameState.actionClickCount[actionKeyFull]++;
+            console.log(`Click count per ${actionKeyFull}: ${gameState.actionClickCount[actionKeyFull]}`);
+            
             // Controlla se ci sono effetti per questa azione
+            let narrativeToShow = null;
             if (locationData.azioni_effetti && locationData.azioni_effetti[actionKey]) {
                 const actionData = locationData.azioni_effetti[actionKey];
+                const clickCount = gameState.actionClickCount[actionKeyFull];
                 
-                // Verifica se l'azione ha ancora effetti
-                if (hasActionEffects(actionData)) {
-                    // Prima volta: narrativa normale con effetti
-                    narrativeTextEl.textContent = actionData.narrativa;
-                    
-                    // Imposta flag se necessario
-                    if (actionData.imposta_flag) {
-                        gameState.playerFlags.add(actionData.imposta_flag);
+                // Gestione azioni con max_click
+                if (actionData.max_click) {
+                    if (clickCount === 1) {
+                        // Primo click
+                        narrativeToShow = actionData.narrativa;
+                        if (actionData.imposta_flag) {
+                            gameState.playerFlags.add(actionData.imposta_flag);
+                        }
+                        applyResourceChanges(actionData.modifica_risorse);
+                    } else if (clickCount === 2 && actionData.narrativa_seconda) {
+                        // Secondo click
+                        narrativeToShow = actionData.narrativa_seconda;
+                    } else if (clickCount > 2 && actionData.narrativa_finale) {
+                        // Click successivi
+                        narrativeToShow = actionData.narrativa_finale;
                     }
-                    
-                    // Applica modifiche alle risorse
-                    applyResourceChanges(actionData.modifica_risorse);
                 } else {
-                    // Azione già fatta: narrativa ripetuta senza effetti
-                    if (actionData.narrativa_ripetuta) {
-                        narrativeTextEl.textContent = actionData.narrativa_ripetuta;
+                    // Logica normale per azioni senza max_click
+                    if (hasActionEffects(actionData)) {
+                        narrativeToShow = actionData.narrativa;
+                        if (actionData.imposta_flag) {
+                            gameState.playerFlags.add(actionData.imposta_flag);
+                        }
+                        applyResourceChanges(actionData.modifica_risorse);
                     } else {
-                        narrativeTextEl.textContent = actionData.narrativa + " (Già fatto)";
+                        if (actionData.narrativa_ripetuta) {
+                            narrativeToShow = actionData.narrativa_ripetuta;
+                        } else {
+                            narrativeToShow = actionData.narrativa + " (Già fatto)";
+                        }
                     }
                 }
             }
             
             gameState.actionChosen = true;
-            // Non disabilitare più tutti i pulsanti azione
+            // Ricarica la location per aggiornare i pulsanti
+            renderLocation(gameState.currentLocationId);
+            
+            // Imposta la narrativa DOPO aver ricaricato la location
+            if (narrativeToShow) {
+                narrativeTextEl.textContent = narrativeToShow;
+            }
         }
     });
 
@@ -209,13 +253,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    navPadEl.addEventListener('click', (e) => {
+    navPadEl.addEventListener('click', async (e) => {
         if (e.target.classList.contains('nav-btn') && !e.target.classList.contains('disabled')) {
             const direction = e.target.dataset.direction;
             const currentLocation = allLocationData[gameState.currentLocationId];
             const nextLocationId = currentLocation.navigazione[direction];
             if (nextLocationId) {
                 console.log(`Navigazione verso ${direction}: ${nextLocationId}`);
+                
+                // Carica la nuova scena se non è già stata caricata
+                if (!allLocationData[nextLocationId]) {
+                    const newScene = await loadScene(nextLocationId);
+                    if (newScene) {
+                        allLocationData[nextLocationId] = newScene;
+                    } else {
+                        narrativeTextEl.textContent = `Errore nel caricamento della scena ${nextLocationId}`;
+                        return;
+                    }
+                }
+                
                 gameState.currentLocationId = nextLocationId;
                 gameState.moveMode = false; // Reset modalità movimento dopo il movimento
                 moveBtnEl.textContent = 'MUOVI'; // Reset testo pulsante
@@ -227,13 +283,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // --- CARICAMENTO SCENE ---
+    async function loadScene(locationId) {
+        try {
+            const response = await fetch(`scenes/${locationId}.json`);
+            if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
+            return await response.json();
+        } catch (error) {
+            console.error(`Errore nel caricamento della scena ${locationId}:`, error);
+            return null;
+        }
+    }
+
     // --- INIZIALIZZAZIONE ASINCRONA ---
     async function init() {
         console.log("Inizializzazione gioco...");
         try {
-            const response = await fetch('data.json');
-            if (!response.ok) { throw new Error(`HTTP error! status: ${response.status}`); }
-            allLocationData = await response.json();
+            // Carica la scena iniziale
+            const initialScene = await loadScene(gameState.currentLocationId);
+            if (initialScene) {
+                allLocationData[gameState.currentLocationId] = initialScene;
+            }
             
             // Popola tutti i box con i dati
             populateDataBox(resourcesContentEl, getRisorseDisplay(), 'quantita');
@@ -243,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderLocation(gameState.currentLocationId);
             
         } catch (error) {
-            console.error('Errore nel caricamento del file data.json:', error);
+            console.error('Errore nel caricamento delle scene:', error);
             narrativeTextEl.textContent = "ERRORE CRITICO: Impossibile caricare i dati del mondo di gioco. Controlla la console.";
         }
     }

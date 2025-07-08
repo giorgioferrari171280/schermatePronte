@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappa di Gioco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="global-container">
+        
+        <div class="top-bar">
+            <div class="title-container">
+                <h1>MAPPA</h1>
+            </div>
+            <div class="header-buttons">
+                <button>HOME</button>
+                <button>OPZIONI</button>
+            </div>
+        </div>
+
+        <main class="main-body">
+            
+            <section class="left-section">
+                <div class="map-container">
+                    <div id="map-grid" class="map-grid">
+                        </div>
+                </div>
+            </section>
+
+            <section class="right-section">
+                <div id="selected-location-image" class="selected-location-image">
+                    Location selezionata
+                </div>
+                
+                <div class="description-container">
+                    <p id="selected-location-description">
+                        Descrizione Location selezionata
+                    </p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="go-button" disabled>VAI QUI</button>
+                    <button id="back-button">INDIETRO</button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

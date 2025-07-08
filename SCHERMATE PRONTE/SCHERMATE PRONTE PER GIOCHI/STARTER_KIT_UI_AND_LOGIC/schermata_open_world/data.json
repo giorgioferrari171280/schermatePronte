@@ -2,7 +2,7 @@
   "dock_07": {
     "nome_location": "Cyber-Dock 07",
     "descrizione": "Le luci al neon si riflettono sulle pozzanghere oleose del molo. L'aria è densa di salsedine e del ronzio dei droni da carico. Un mercantile arrugginito, il 'CosmoDrifter', è ormeggiato, cigolando contro i respingenti. Cosa fai?",
-    "path_immagine": "https://cdn.pixabay.com/photo/2022/11/13/18/43/background-7590209_1280.jpg",
+    "path_immagine": "asset/metropolis.png",
     "azioni": {
       "a": "Ispeziona il mercantile",
       "b": "Parla con i portuali",

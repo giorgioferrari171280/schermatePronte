@@ -1,0 +1,88 @@
+{
+  "nome_location": "Distretto del Mercato Nero",
+  "descrizione": "Vicolo stretto e affollato, illuminato da ologrammi pubblicitari tremolanti. Mercanti di ogni tipo vendono impianti cibernetici, dati rubati e armi illegali. L'odore di spezie sintetiche e circuiti bruciati è opprimente.",
+  "path_immagine": "https://cdn.pixabay.com/photo/2024/02/21/14/19/ai-generated-8587937_1280.png",
+  "azioni": {
+    "a": "Contratta per un chip",
+    "b": "Origlia conversazioni",
+    "c": "Bevi al bar",
+    "d": "Vendi componenti",
+    "e": "Cerca un contatto",
+    "f": "Decripta un terminale",
+    "g": "Inizia una rissa",
+    "h": "Gioca d'azzardo",
+    "i": "Riparare equip."
+  },
+  "azioni_effetti": {
+    "a": {
+      "narrativa": "Contratti con un mercante di chip neurali. Ti offre un chip di memoria espansa per 300 crediti, ma sembra sospettosamente economico.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "b": {
+      "narrativa": "Ti avvicini discretamente a un gruppo di mercanti che parlano di una spedizione segreta. Menzioni un carico di 'merce speciale' in arrivo domani.",
+      "richiede_flag": null,
+      "imposta_flag": "market_info_spedizione",
+      "modifica_risorse": null
+    },
+    "c": {
+      "narrativa": "Ordini un drink sintetico al bar. Il barista cyborg ti serve un liquido blu elettrico. Ha un sapore di metallo e energia, ma ti rinfresca.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": {"Crediti": -15}
+    },
+    "d": {
+      "narrativa": "Vendi alcuni componenti a un mercante di rottami. Ti offre 50 crediti per pezzo, un prezzo onesto per questo tipo di merce.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": {"Crediti": 150, "Componenti": -3}
+    },
+    "e": {
+      "narrativa": "Cerchi un informatore nella folla. Dopo un po' trovi un hacker che ti propone un lavoro: hackerare un database corporativo per 500 crediti.",
+      "narrativa_seconda": "Ti avvicini all'hacker. 'Allora, sei interessato al lavoro? Il target è un database della Zenith Corp. Pagamento in anticipo: 500 crediti.'",
+      "narrativa_finale": "Non ho più niente da dirti.",
+      "richiede_flag": null,
+      "imposta_flag": "market_contatto_hacker",
+      "modifica_risorse": null,
+      "cambio_testo": "INCONTRA IL CONTATTO",
+      "max_click": 2
+    },
+    "f": {
+      "narrativa": "Trovi un terminale pubblico e tenti di decrittarlo. Dopo vari tentativi riesci ad accedere a informazioni sui movimenti delle pattuglie di sicurezza.",
+      "richiede_flag": null,
+      "imposta_flag": "market_terminale_hackerato",
+      "modifica_risorse": {"Chip Dati": 2}
+    },
+    "g": {
+      "narrativa": "Provochi deliberatamente una rissa con un mercante arrogante. La situazione degenera rapidamente, ma riesci a fuggire prima che arrivi la sicurezza.",
+      "richiede_flag": null,
+      "imposta_flag": "market_rissa_causata",
+      "modifica_risorse": null
+    },
+    "h": {
+      "narrativa": "Giochi d'azzardo con alcuni contrabbandieri. La fortuna ti sorride e vinci una discreta somma, ma attiri anche attenzioni indesiderate.",
+      "narrativa_ripetuta": "Provi a giocare di nuovo, ma stavolta la fortuna non è dalla tua parte. I contrabbandieri ti guardano con sospetto - sanno che hai già vinto abbastanza.",
+      "richiede_flag": "!market_fortuna_esaurita",
+      "imposta_flag": "market_fortuna_esaurita",
+      "modifica_risorse": {"Crediti": 180}
+    },
+    "i": {
+      "narrativa": "Ripari alcuni dei tuoi equipaggiamenti usurati. Usi i componenti di scorta per sistemare il tuo scanner e migliorare l'efficienza energetica.",
+      "richiede_flag": "!market_equipaggiamento_riparato",
+      "imposta_flag": "market_equipaggiamento_riparato",
+      "modifica_risorse": {"Componenti": -2},
+      "disattiva_dopo_uso": true
+    }
+  },
+  "descrizione_alternativa": {
+    "market_rissa_causata": "Il vicolo del mercato nero è ancora in subbuglio dopo la rissa di prima. Alcuni mercanti ti guardano con sospetto, mentre altri sembrano rispettarti di più.",
+    "market_fortuna_esaurita": "Il mercato nero è come sempre, ma ora i giocatori d'azzardo ti conoscono. La tua fortuna precedente è già leggenda, ma difficilmente si ripeterà."
+  },
+  "navigazione": {
+    "N": null,
+    "S": "dock_07",
+    "E": null,
+    "W": null
+  }
+}

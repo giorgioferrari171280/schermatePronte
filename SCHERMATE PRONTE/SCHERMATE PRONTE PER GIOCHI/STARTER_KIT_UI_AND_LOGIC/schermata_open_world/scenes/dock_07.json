@@ -1,0 +1,82 @@
+{
+  "nome_location": "Cyber-Dock 07",
+  "descrizione": "Le luci al neon si riflettono sulle pozzanghere oleose del molo. L'aria è densa di salsedine e del ronzio dei droni da carico. Un mercantile arrugginito, il 'CosmoDrifter', è ormeggiato, cigolando contro i respingenti. Cosa fai?",
+  "path_immagine": "asset/metropolis.png",
+  "azioni": {
+    "a": "Ispeziona il mercantile",
+    "b": "Parla con i portuali",
+    "c": "Cerca terminale dati",
+    "d": "Controlla le casse",
+    "e": "Nasconditi nell'ombra",
+    "f": "Scansiona le frequenze",
+    "g": "Esamina le gru",
+    "h": "Cerca un passaggio",
+    "i": "Cerca compagnia"
+  },
+  "azioni_effetti": {
+    "a": {
+      "narrativa": "Sali a bordo del CosmoDrifter. Il ponte è deserto ma noti tracce di un'attività recente. Dei cavi di alimentazione sono stati staccati di fresco e c'è un odore di ozono nell'aria.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "b": {
+      "narrativa": "Ti avvicini ai portuali che scaricano merci. Uno di loro, un cyborg con braccia meccaniche, ti guarda sospettoso: 'Che cosa vuoi, straniero? Questo non è posto per turisti.'",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "c": {
+      "narrativa": "Individui un terminale dati semi-nascosto dietro alcune casse. Lo schermo mostra log di transazioni commerciali. Qualcuno ha cercato di cancellare i dati, ma non del tutto.",
+      "richiede_flag": null,
+      "imposta_flag": "dock_07_terminale_hackerato",
+      "modifica_risorse": {"Chip Dati": 1}
+    },
+    "d": {
+      "narrativa": "Frughi tra le casse ammucchiate. Nella terza cassa trovi un contenitore metallico con 200 crediti e alcuni componenti elettronici di valore!",
+      "narrativa_ripetuta": "Controlli di nuovo le casse, ma sono ormai vuote. Hai già preso tutto quello che c'era di valore.",
+      "richiede_flag": "!dock_07_casse_controllate",
+      "imposta_flag": "dock_07_casse_controllate",
+      "modifica_risorse": {"Crediti": 200, "Componenti": 3}
+    },
+    "e": {
+      "narrativa": "Ti nascondi nell'ombra di una gru. Da qui osservi il movimento dei droni e noti uno schema interessante: ogni 15 minuti arriva un drone da una direzione specifica.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "f": {
+      "narrativa": "Attivi lo scanner per le frequenze radio. Intercetti trasmissioni criptate tra i droni da carico. Potrebbe essere utile più avanti.",
+      "richiede_flag": null,
+      "imposta_flag": "dock_07_frequenze_scansionate",
+      "modifica_risorse": null
+    },
+    "g": {
+      "narrativa": "Esamini le gru portuali. Sono vecchie ma funzionanti. Noti che una di esse ha un pannello di controllo accessibile - potrebbe essere utile in futuro.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "h": {
+      "narrativa": "Cerchi qualcuno disposto a farti viaggiare. Un contrabbandiere ti offre un passaggio per 100 crediti, ma non sembra molto affidabile.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    },
+    "i": {
+      "narrativa": "Decidi di osservare la situazione senza agire. Il tempo passa lentamente mentre ascolti i suoni del molo e osservi l'attività portuale.",
+      "richiede_flag": null,
+      "imposta_flag": null,
+      "modifica_risorse": null
+    }
+  },
+  "descrizione_alternativa": {
+    "dock_07_casse_controllate": "Le luci al neon si riflettono sulle pozzanghere oleose del molo. L'aria è densa di salsedine e del ronzio dei droni da carico. Un mercantile arrugginito, il 'CosmoDrifter', è ormeggiato, cigolando contro i respingenti. Le casse che hai già controllato sono ancora sparse per il molo."
+  },
+  "navigazione": {
+    "N": "market_district",
+    "S": null,
+    "E": null,
+    "W": null
+  }
+}
